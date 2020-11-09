@@ -3,4 +3,4 @@
 Backend: Django, Django REST
 Frontend: React
 
-[](django-react-todo.gif)
+[Check the Demo](django-react-todo.gif)
