@@ -37,13 +37,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
     'rest_framework',
-    'todo'
+    'corsheaders',
+    'todo',
 ]
+
+# new
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -53,12 +61,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'backend.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,10 +77,14 @@ TEMPLATES = [
     },
 ]
 
-# we whitelist localhost:3000 because that's where frontend will be served
+
 CORS_ORIGIN_WHITELIST = [
     'https://localhost:3000'
 ]
+
+ROOT_URLCONF = 'backend.urls'
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
