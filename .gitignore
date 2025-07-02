@@ -1,0 +1,21 @@
+# Python
+*.pyc
+__pycache__/
+db.sqlite3
+.env
+
+# Django
+/staticfiles/
+/media/
+
+# VSCode
+.vscode/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# React build
+/frontend/build/

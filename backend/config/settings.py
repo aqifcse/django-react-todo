@@ -78,15 +78,13 @@ TEMPLATES = [
 ]
 
 
-CORS_ORIGIN_WHITELIST = [
-    'https://localhost:3000'
-]
+CORS_ORIGIN_ALLOW_ALL = True
 
-ROOT_URLCONF = 'backend.urls'
+ROOT_URLCONF = 'config.urls'
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-WSGI_APPLICATION = 'backend.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database
